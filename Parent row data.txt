@@ -1,0 +1,21 @@
+INSERT INTO Students (StudentNumber, StudentName, SectionName, SubjectCode, Email) VALUES
+('20210001', 'Alice Mendoza', 'CS101-A', 'CS101', 'alice.mendoza@example.com'),
+('20210002', 'Brandon Lee', 'IT201-B', 'IT202', 'brandon.lee@example.com'),
+('20210003', 'Carlos Reyes', 'CS101-A', 'CS101', 'carlos.reyes@example.com'),
+('20210005', 'Ethan Cruz', 'CS101-A', 'CS101', 'ethan.cruz@example.com'),
+('20210006', 'Faith Santos', 'IT201-B', 'IT202', 'faith.santos@example.com'),
+('20210008', 'Hannah Garcia', 'CS101-A', 'CS101', 'hannah.garcia@example.com'),
+('20210009', 'Ivan Navarro', 'IT201-B', 'IT202', 'ivan.navarro@example.com');
+
+    INSERT INTO Sections (SectionName, StudentsEnrolled) VALUES
+    ('CS101-A', 4),
+    ('IT201-B', 3),
+    ('IS301-C', 3);
+
+
+    INSERT INTO Subjects (SubjectCode, Unit, SubjectName, TotalSections, StudentsEnrolled, Time) VALUES
+    ('CS101', 3, 'Introduction to Programming', 1, 4, 'MWF 8:00-9:00'),
+    ('IT202', 3, 'Database Systems', 1, 3, 'TTh 10:00-11:30'),
+    ('IS303', 3, 'Information Management', 1, 3, 'MWF 1:00-2:00');
+
+
