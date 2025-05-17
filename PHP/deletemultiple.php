@@ -53,6 +53,11 @@ try {
             $tableName = 'sections';
             $idColumn = 'SectionName';
             $redirectUrl = '../Menu/sections.php?deleted=multiple';
+
+            $studentsStmt = $con->prepare("UPDATE students SET SectionName = NULL WHERE SectionName IN ($idPlaceholders)");
+            $types = str_repeat('s', count($ids));
+            $studentsStmt->bind_param($types, ...$ids);
+            $studentsStmt->execute();
             break;
 
         case 'subjects':
