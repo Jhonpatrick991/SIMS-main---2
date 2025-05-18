@@ -65,10 +65,15 @@ try {
             $idColumn = 'SubjectCode';
             $redirectUrl = '../Menu/subjects.php?deleted=multiple';
 
-            $updateStudentsStmt = $con->prepare("UPDATE students SET SectionName = NULL WHERE SectionName IN ($idPlaceholders)");
+            $updateStudentsStmt = $con->prepare("UPDATE students SET SubjectCode = NULL WHERE SubjectCode IN ($idPlaceholders)");
             $types = str_repeat('s', count($ids));
             $updateStudentsStmt->bind_param($types, ...$ids);
             $updateStudentsStmt->execute();
+
+            $updateStudentsStmtqw = $con->prepare("UPDATE grades SET SubjectCode = ' ', Prelim = NULL, Midterm = NULL, SemiFinal = NULL, Final = NULL WHERE SubjectCode IN ($idPlaceholders)");
+            $types = str_repeat('s', count($ids));
+            $updateStudentsStmtqw->bind_param($types, ...$ids);
+            $updateStudentsStmtqw->execute();
             break;
 
         default:

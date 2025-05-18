@@ -19,6 +19,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['id'])) {
         $stmt1->execute();
         $stmt1->close();
 
+        // Update grades: set SubjectCode to '', and grades to NULL
+        $stmtGrades = $con->prepare("UPDATE grades SET SubjectCode = '', Prelim = NULL, Midterm = NULL, SemiFinal = NULL, Final = NULL WHERE SubjectCode = ?");
+        $stmtGrades->bind_param("s", $SubjectCode);
+        $stmtGrades->execute();
+        $stmtGrades->close();
+
         // Delete the subject
         $stmt2 = $con->prepare("DELETE FROM subjects WHERE SubjectId = ?");
         $stmt2->bind_param("i", $SubjectId);
@@ -29,10 +35,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['id'])) {
         } else {
             echo "Error deleting subject: " . $stmt2->error;
         }
-    } else {
-        echo "Subject not found.";
     }
-} else {
-    echo "Invalid request.";
 }
 ?>
