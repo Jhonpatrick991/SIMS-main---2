@@ -160,7 +160,7 @@ $result = $con->query($sql);
         <div class="modal-content">
             <span class="close-btn">&times;</span>
             <h2>Add New Student</h2>
-            
+            //
             <form class="modal-form" action="../PHP/api.php?action=create_student" method="POST">
                 <div class="form-group">
                     <label for="StudentNumber">Student Number (7 digits)</label>

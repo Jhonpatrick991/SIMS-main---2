@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS Sections (
 CREATE TABLE IF NOT EXISTS Grades (
     StudentNumber VARCHAR(20) NOT NULL,
     SubjectCode VARCHAR(20) NOT NULL,
-    Semester VARCHAR(10) NOT NULL,
+    Semester VARCHAR(10) DEFAULT NULL,
     Prelim DECIMAL(5,2) DEFAULT NULL,
     Midterm DECIMAL(5,2) DEFAULT NULL,
     SemiFinal DECIMAL(5,2) DEFAULT NULL,
@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS Grades (
 );
 
 
-
+ 
 
     -- PRIMARY KEY (StudentNumber, SubjectCode),
     -- FOREIGN KEY (StudentNumber) REFERENCES Students(StudentNumber),
