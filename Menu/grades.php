@@ -67,12 +67,6 @@ $result = $con->query($sql);
 
             <main class="table-main">
                 <div class="table-container">
-                    <?php if (isset($_GET['updated'])): ?>
-                        <div class="success-message">
-                            <p style="color: green;">Grade updated successfully.</p>
-                        </div>
-                    <?php endif; ?>
-                
                     <div class="filters">
                         <div class="search-container">
                             <label for="search">Search:</label>

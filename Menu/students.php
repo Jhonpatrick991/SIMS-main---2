@@ -62,12 +62,6 @@ $result = $con->query($sql);
 
             <main class="table-main">
                 <div class="table-container">
-                    <?php if (isset($_GET['updated'])): ?>
-                        <div class="success-message">
-                            <p style="color: green;">Student updated successfully.</p>
-                        </div>
-                    <?php endif; ?>
-
                     <div class="table-header">
                         <button class="add-button" data-modal="studentModal">
                             <i class="fas fa-plus"></i> New Student
